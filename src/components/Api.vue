@@ -107,7 +107,7 @@ export default {
       });
     },
     getApi(id) {
-      this.$axios.get("http://127.0.0.1:8080/a.json").then(res => {
+      this.$axios.get("http://localhost:8080/a.json").then(res => {
         this.api = res.data.apis[id];
       });
     }

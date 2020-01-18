@@ -59,7 +59,7 @@ export default {
       console.log(key, keyPath);
     },
     getApis() {
-      this.$axios.get("http://127.0.0.1:8080/a.json").then(res => {
+      this.$axios.get("http://localhost:8080/a.json").then(res => {
         this.apis = res.data.apis;
       });
     },
