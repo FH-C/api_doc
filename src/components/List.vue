@@ -1,37 +1,37 @@
 <template>
-  <el-aside width="25%">
-    <el-row class="tac">
-      <el-col :span="12">
-        <h5 align="middle">harddoc</h5>
-        <el-menu
-          default-active="2"
-          class="el-menu-vertical-demo"
-          @open="handleOpen"
-          @close="handleClose"
-          text-color="#5c6975"
-          active-text-color="#ffd04b"
-          unique-opened="true"
-          align="middle"
-        >
-          <el-submenu v-for="(api, index) in unique" :index="api" :key="index">
-            <template slot="title">
-              <span>{{api}}</span>
-            </template>
-            <el-menu-item v-for="(api2, index) in classApi(api)" :index="api2.title" :key="index">
-              <router-link :to="{ name: 'api', params: { id: api2.id }}">
-                <span>{{api2.title}}</span>
-              </router-link>
-            </el-menu-item>
-          </el-submenu>
-        </el-menu>
-      </el-col>
-    </el-row>
-  </el-aside>
+        <div style="display: flex; flex-direction: column;align-content: center;">
+          <h5 align="middle">harddoc</h5>
+          <Search ></Search>
+          <el-menu
+            default-active="2"
+            class="el-menu-vertical-demo"
+            @open="handleOpen"
+            @close="handleClose"
+            text-color="#5c6975"
+            active-text-color="#ffd04b"
+            :unique-opened="true"
+            align="middle"
+          >
+            <el-submenu v-for="(api, index) in unique" :index="api" :key="index">
+              <template slot="title">
+                <span>{{api}}</span>
+              </template>
+              <el-menu-item v-for="(api2, index) in classApi(api)" :index="api2.title" :key="index">
+                <router-link :to="{ name: 'api', params: { id: api2.id }}">
+                  <span>{{api2.title}}</span>
+                </router-link>
+              </el-menu-item>
+            </el-submenu>
+          </el-menu>
+        </div>
+
 </template>
 
 <script>
+import Search from "./Search";
 export default {
-  data() {
+    components: {Search},
+    data() {
     return {
       apis: [],
       classList: []

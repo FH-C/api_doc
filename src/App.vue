@@ -3,20 +3,18 @@
     <el-container style="width: 100%;height:100%">
       <list></list>
       <api></api>
-      <Search></Search>
     </el-container>
   </div>
 </template>
 
 <script>
-import Search from "./components/Search.vue";
+// import Search from "./components/Search.vue";
 import Api from "./components/Api.vue";
 import List from "./components/List.vue";
 
 export default {
   name: "app",
   components: {
-    Search,
     Api,
     List
   },

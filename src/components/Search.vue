@@ -1,16 +1,13 @@
 <template>
-  <div>
-    <el-row class="demo-autocomplete">
-      <el-col :span="12">
+  <div class="wrap-search">
         <el-autocomplete
           class="inline-input"
           v-model="state1"
           :fetch-suggestions="querySearch"
           placeholder="搜索api"
           @select="handleSelect"
+          style="width: 100%; max-width:150px;margin: 0 auto;"
         ></el-autocomplete>
-      </el-col>
-    </el-row>
   </div>
 </template>
 
@@ -99,5 +96,7 @@
 </script>
 
 <style>
-
+    .wrap-search {
+        padding: 0 20px;
+    }
 </style>
